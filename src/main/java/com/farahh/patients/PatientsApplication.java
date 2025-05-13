@@ -8,6 +8,8 @@ import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
 import com.farahh.patients.entities.Genre;
 import com.farahh.patients.entities.Patient;
+
+import jakarta.annotation.PostConstruct;
 @SpringBootApplication
 public class PatientsApplication implements CommandLineRunner {
    
@@ -21,5 +23,7 @@ public class PatientsApplication implements CommandLineRunner {
 		repositoryRestConfiguration.exposeIdsFor(Patient.class,Genre.class);
 		
 	}
+	
+	
 
 }

@@ -3,6 +3,7 @@ package com.farahh.patients.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import com.farahh.patients.entities.Genre;
@@ -12,6 +13,7 @@ import com.farahh.patients.repos.PatientRepository;
 public class PatientServiceImpl implements PatientService {
 	@Autowired
     PatientRepository patientRepository;
+	@PreAuthorize("hasAuthority('ADMIN')")
 
 	@Override
 	public Patient savePatient(Patient p) {
